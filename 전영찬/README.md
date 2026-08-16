@@ -16,7 +16,7 @@ Dunnhumby `The Complete Journey` 데이터를 활용하여 딥할인 구매 이�
 
 ## 폴더 구성
 - `sql/`: BigQuery 분석 쿼리
-- `data/`: 집계·비식별 Tableau 입력 데이터
+- `tableau_data/`: 집계·비식별 Tableau 입력 데이터
 - `tableau/`: Tableau 워크북, 계산필드 및 데이터 생성 파이프라인
 - `report/`: 최종 보고서와 분석 초안
 
@@ -24,8 +24,8 @@ Dunnhumby `The Complete Journey` 데이터를 활용하여 딥할인 구매 이�
 - `tableau/대시보드1_카테고리.twb`: 카테고리별 판촉 성과 포트폴리오
 - `tableau/대시보드2_고객세그먼트.twb`: 고객 세그먼트별 판촉 성과 및 CRM 전략
 - `report/complete_journey_promotion_strategy_report.docx`: 종합 분석 보고서
-- `data/tableau_category_kpi.csv`: 카테고리 KPI
-- `data/tableau_segment_kpi.csv`: 고객 세그먼트 KPI
+- `tableau_data/tableau_category_kpi.csv`: 카테고리 KPI
+- `tableau_data/tableau_segment_kpi.csv`: 고객 세그먼트 KPI
 
 ## 주요 정의
 - 딥할인: 분석 쿼리에 정의된 할인율 기준을 충족한 구매 이벤트
