@@ -1,0 +1,26 @@
+[Visit Significant]
+IF [visit_ci_low] > 0 THEN "Significant Increase"
+ELSEIF [visit_ci_high] < 0 THEN "Significant Decrease"
+ELSE "Uncertain" END
+
+[Spend Significant]
+IF [spend_ci_low] > 0 THEN "Significant Increase"
+ELSEIF [spend_ci_high] < 0 THEN "Significant Decrease"
+ELSE "Uncertain" END
+
+[Evidence Grade]
+IF [households] >= 200 AND ABS([spend_diff]/[spend_se]) >= 1.96 THEN "A"
+ELSEIF [households] >= 100 THEN "B"
+ELSEIF [households] >= 30 THEN "C"
+ELSE "D" END
+
+[Recommended Action]
+IF [performance_quadrant] = "Q1 Relationship strengthened" THEN "Maintain / Expand Test"
+ELSEIF [performance_quadrant] = "Q2 More low-value visits" THEN "Reduce Discount Depth / Basket Condition"
+ELSEIF [performance_quadrant] = "Q3 Fewer high-value visits" THEN "Review Pack Size / Trip Consolidation"
+ELSE "Stop / Redesign Candidate" END
+
+[RFM Agreement]
+IF [equal_value_tier]=[visit_value_tier]
+AND [equal_value_tier]=[spend_value_tier]
+THEN "Stable" ELSE "Weight-sensitive" END
