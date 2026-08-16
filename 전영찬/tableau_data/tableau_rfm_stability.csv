@@ -1,0 +1,33 @@
+sample,equal_value_tier,visit_value_tier,spend_value_tier,events,households
+TRAIN,V1 Core,V1 Core,V1 Core,55105,471
+TRAIN,V1 Core,V1 Core,V2 Growth potential,4505,113
+TRAIN,V2 Growth potential,V1 Core,V1 Core,2694,188
+TRAIN,V2 Growth potential,V1 Core,V2 Growth potential,2649,136
+TRAIN,V2 Growth potential,V2 Growth potential,V1 Core,8364,177
+TRAIN,V2 Growth potential,V2 Growth potential,V2 Growth potential,50001,957
+TRAIN,V2 Growth potential,V2 Growth potential,V3 Maintain,5797,444
+TRAIN,V3 Maintain,V2 Growth potential,V2 Growth potential,1837,206
+TRAIN,V3 Maintain,V2 Growth potential,V3 Maintain,3882,379
+TRAIN,V3 Maintain,V3 Maintain,V2 Growth potential,8919,289
+TRAIN,V3 Maintain,V3 Maintain,V3 Maintain,47813,1345
+TRAIN,V3 Maintain,V3 Maintain,V4 Low engagement,5313,715
+TRAIN,V4 Low engagement,V3 Maintain,V3 Maintain,1312,206
+TRAIN,V4 Low engagement,V3 Maintain,V4 Low engagement,799,122
+TRAIN,V4 Low engagement,V4 Low engagement,V3 Maintain,5155,275
+TRAIN,V4 Low engagement,V4 Low engagement,V4 Low engagement,67218,1859
+VALID,V1 Core,V1 Core,V1 Core,97429,599
+VALID,V1 Core,V1 Core,V2 Growth potential,6604,175
+VALID,V2 Growth potential,V1 Core,V1 Core,6064,256
+VALID,V2 Growth potential,V1 Core,V2 Growth potential,4631,160
+VALID,V2 Growth potential,V2 Growth potential,V1 Core,16363,252
+VALID,V2 Growth potential,V2 Growth potential,V2 Growth potential,94389,1156
+VALID,V2 Growth potential,V2 Growth potential,V3 Maintain,9684,596
+VALID,V3 Maintain,V2 Growth potential,V2 Growth potential,4248,365
+VALID,V3 Maintain,V2 Growth potential,V3 Maintain,6711,501
+VALID,V3 Maintain,V3 Maintain,V2 Growth potential,17793,425
+VALID,V3 Maintain,V3 Maintain,V3 Maintain,81316,1595
+VALID,V3 Maintain,V3 Maintain,V4 Low engagement,9251,1045
+VALID,V4 Low engagement,V3 Maintain,V3 Maintain,2319,327
+VALID,V4 Low engagement,V3 Maintain,V4 Low engagement,1539,192
+VALID,V4 Low engagement,V4 Low engagement,V3 Maintain,8854,436
+VALID,V4 Low engagement,V4 Low engagement,V4 Low engagement,113915,2021

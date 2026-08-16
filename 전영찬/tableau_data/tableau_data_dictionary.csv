@@ -1,0 +1,26 @@
+file,field,description
+segment,weight_method,RFM 가중치 방식
+segment,value_tier,고객가치 4등급
+segment,churn_risk,최근 84일 방문이 이전 84일보다 감소했는지
+segment,cat_behavior,고객-카테고리 사전 행동유형
+segment,households,딥할인과 정가 이벤트가 모두 있는 가구 수
+segment,deep_events,딥할인 검증 이벤트 수
+segment,full_events,정가 검증 이벤트 수
+segment,visit_diff,딥할인 후 28일 방문-정가 후 28일 방문
+segment,spend_diff,딥할인 후 28일 매장지출-정가 후 28일 매장지출
+segment,visit_se,가구 단위 방문 차이의 표준오차
+segment,spend_se,가구 단위 지출 차이의 표준오차
+segment,visit_ci_low,방문 차이 95% 신뢰구간 하한
+segment,visit_ci_high,방문 차이 95% 신뢰구간 상한
+segment,spend_ci_low,지출 차이 95% 신뢰구간 하한
+segment,spend_ci_high,지출 차이 95% 신뢰구간 상한
+segment,performance_quadrant,방문×지출 성과 4분면
+category,COMMODITY_DESC,상품 카테고리
+category,households,카테고리 비교 가능 가구 수
+category,visit_diff,카테고리별 28일 방문 차이
+category,spend_diff,카테고리별 28일 지출 차이
+stability,sample,TRAIN 또는 VALID
+stability,equal_value_tier,동일가중 RFM 등급
+stability,visit_value_tier,방문중심 RFM 등급
+stability,spend_value_tier,지출중심 RFM 등급
+stability,events,등급 조합의 이벤트 수
