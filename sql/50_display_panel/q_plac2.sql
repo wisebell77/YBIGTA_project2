@@ -1,0 +1,28 @@
+WITH lead AS (
+  SELECT product_id, store_id, week_no, net, disp,
+    LEAD(disp) OVER (PARTITION BY product_id, store_id ORDER BY week_no) AS dnext
+  FROM `ybigta-505002.dunnhumby_mart.mart_psw_panel`),
+f AS (SELECT * FROM lead WHERE dnext IS NOT NULL AND disp = 0),
+cells AS (SELECT product_id, week_no, COUNT(*) AS n, SUM(dnext) AS nt FROM f GROUP BY 1,2),
+vc AS (SELECT product_id, week_no FROM cells WHERE nt>0 AND nt<n),
+p AS (SELECT f.* FROM f JOIN vc USING (product_id,week_no)),
+i1 AS (SELECT product_id, store_id, week_no, net, dnext,
+        net   - AVG(net)   OVER (PARTITION BY product_id, week_no) AS y,
+        dnext - AVG(dnext) OVER (PARTITION BY product_id, week_no) AS x FROM p),
+i2 AS (SELECT *, y - AVG(y) OVER (PARTITION BY product_id, store_id) AS y2,
+                 x - AVG(x) OVER (PARTITION BY product_id, store_id) AS x2 FROM i1),
+i3 AS (SELECT *, y2 - AVG(y2) OVER (PARTITION BY product_id, week_no) AS y3,
+                 x2 - AVG(x2) OVER (PARTITION BY product_id, week_no) AS x3 FROM i2),
+i4 AS (SELECT *, y3 - AVG(y3) OVER (PARTITION BY product_id, store_id) AS y4,
+                 x3 - AVG(x3) OVER (PARTITION BY product_id, store_id) AS x4 FROM i3),
+i5 AS (SELECT *, y4 - AVG(y4) OVER (PARTITION BY product_id, week_no) AS y5,
+                 x4 - AVG(x4) OVER (PARTITION BY product_id, week_no) AS x5 FROM i4),
+d AS (SELECT product_id, y5 AS y, x5 AS x FROM i5),
+b AS (SELECT SUM(y*x)/SUM(POW(x,2)) AS beta, SUM(POW(x,2)) AS sxx FROM d),
+r AS (SELECT d.product_id, d.x*(d.y - b.beta*d.x) AS xe FROM d CROSS JOIN b),
+cl AS (SELECT product_id, SUM(xe) AS g FROM r GROUP BY 1),
+v AS (SELECT SUM(POW(g,2)) AS meat FROM cl)
+SELECT (SELECT COUNT(*) FROM d) AS rows_,
+  ROUND((SELECT beta FROM b),4) AS beta_placebo_dd,
+  ROUND(SQRT((SELECT meat FROM v))/(SELECT sxx FROM b),4) AS se_cluster,
+  ROUND((SELECT beta FROM b)/(SQRT((SELECT meat FROM v))/(SELECT sxx FROM b)),2) AS t_placebo_dd

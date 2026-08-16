@@ -1,0 +1,6 @@
+﻿quintile,dd_pre_range,households,spend_per_hh_usd,disc_received_usd,share_of_all_sales_pct,share_of_all_discount_pct,visit_retention,visit_retention_ci95,mailer_net_effect_pct,mailer_net_t,mailer_net_pct_splitsample,elasticity,elasticity_splitsample,n_pairs_mailer,exposure_reach_pct,campaign_targeted_pct,coupon_redeem_of_targeted_pct
+Q1,1.0~11.1%,500,2657,267,22.4,12.7,1.306,0.103,-1.5,-1.9,-1.4,0.87,0.84,4498,10.55,67.0,25.5
+Q2,11.1~13.6%,500,2676,379,22.5,18.1,1.233,0.078,1.3,1.8,1.1,1.01,0.96,6103,12.34,73.8,26.9
+Q3,13.6~16.1%,500,2579,452,21.7,21.5,1.253,0.096,5.2,7.2,5.7,1.16,1.17,6869,14.54,74.5,24.5
+Q4,16.1~19.2%,500,2167,469,18.2,22.3,1.213,0.086,6.7,9.0,7.1,1.28,1.36,6500,16.83,73.1,25.6
+Q5,19.2~44.0%,500,1799,535,15.1,25.4,1.27,0.09,11.7,14.9,12.7,1.44,1.46,6324,21.88,63.0,37.3
