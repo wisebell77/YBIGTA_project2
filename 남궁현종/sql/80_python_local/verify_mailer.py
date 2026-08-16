@@ -1,10 +1,23 @@
+import os
+
+def _data(up=6):
+    d = os.path.dirname(os.path.abspath(__file__))
+    for _ in range(up):
+        c = os.path.join(d, "data")
+        if os.path.isfile(os.path.join(c, "transaction_data.csv")):
+            return c.replace("\\", "/")
+        d = os.path.dirname(d)
+    raise SystemExit("data/ 를 찾지 못했습니다. 저장소 최상위의 data/ 에 원본 CSV를 두세요.")
+
+DATA = _data()
+
 import duckdb
 con = duckdb.connect()
-con.execute("CREATE VIEW t AS SELECT * FROM read_csv_auto('data/transaction_data.csv')")
-con.execute("CREATE VIEW p AS SELECT * FROM read_csv_auto('data/product.csv')")
-con.execute("""CREATE TABLE cz AS
+con.execute(f"CREATE VIEW t AS SELECT * FROM read_csv_auto('{DATA}/transaction_data.csv')")
+con.execute(f"CREATE VIEW p AS SELECT * FROM read_csv_auto('{DATA}/product.csv')")
+con.execute(f"""CREATE TABLE cz AS
   SELECT PRODUCT_ID, STORE_ID, WEEK_NO, max(display) AS display, max(mailer) AS mailer
-  FROM read_csv_auto('data/causal_data.csv') GROUP BY 1,2,3""")
+  FROM read_csv_auto('{DATA}/causal_data.csv') GROUP BY 1,2,3""")
 
 print('=== join match rate: transaction lines -> causal_data on (P,S,W) ===')
 print(con.sql("""

@@ -3,8 +3,20 @@ import duckdb, os
 import pandas as pd
 
 pd.set_option("display.width", 250); pd.set_option("display.max_rows", 120)
-DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "local.duckdb")
-DATA = r"C:\Users\nk233\Desktop\YBIGTA\26-2학기\여름방학\project2\data"
+def find_data(start, up=6):
+    """상위 폴더를 훑어 원본 CSV가 든 data/ 를 찾는다."""
+    d = start
+    for _ in range(up):
+        cand = os.path.join(d, "data")
+        if os.path.isfile(os.path.join(cand, "transaction_data.csv")):
+            return cand
+        d = os.path.dirname(d)
+    raise SystemExit("data/ 를 찾지 못했습니다. 저장소 최상위의 data/ 에 원본 CSV를 두세요.")
+
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DB = os.path.join(HERE, "local.duckdb")
+DATA = find_data(HERE)
 con = duckdb.connect(DB, read_only=False)
 con.execute("PRAGMA threads=8")
 

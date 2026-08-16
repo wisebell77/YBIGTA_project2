@@ -4,8 +4,23 @@ q_occ_all.sql 의 정의를 그대로 옮긴 것. 검증 목표는 문서에 기
 """
 import duckdb, os, time
 
-DATA = r"C:\Users\nk233\Desktop\YBIGTA\26-2학기\여름방학\project2\data"
-DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "local.duckdb")
+
+def find_data(start, up=6):
+    """상위 폴더를 훑어 원본 CSV가 든 data/ 를 찾는다. 폴더 구조가 바뀌어도 견디도록."""
+    d = start
+    for _ in range(up):
+        cand = os.path.join(d, "data")
+        if os.path.isfile(os.path.join(cand, "transaction_data.csv")):
+            return cand
+        d = os.path.dirname(d)
+    raise SystemExit(
+        "data/ 를 찾지 못했습니다. dunnhumby 원본 CSV 8종을 저장소 최상위의 data/ 에 두세요.\n"
+        "  https://www.dunnhumby.com/source-files/")
+
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = find_data(HERE)
+DB = os.path.join(HERE, "local.duckdb")
 
 con = duckdb.connect(DB)
 con.execute("PRAGMA threads=8")
