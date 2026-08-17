@@ -1,0 +1,23 @@
+# Dunnhumby Promotion Incrementality — 실행에 필요한 패키지만 포함
+# (pip freeze 전체가 아니라, release 코드의 실제 import 를 전수 스캔해 작성)
+# 버전은 원 분석이 정상 실행된 환경 기준으로 pin 했다.
+
+duckdb==1.5.1          # 전 Phase 의 SQL 엔진
+numpy==1.26.4          # fe_estimator 의 bincount 기반 demeaning
+pandas==3.0.0          # 표 조작 · CSV I/O
+pyarrow==15.0.2        # pandas 의 parquet 읽기/쓰기 백엔드 (직접 import 하지 않음)
+scipy==1.16.2          # t/정규 분포 (p-value, FDR)
+PyYAML==6.0.1          # config 로더
+
+# 회귀 (Phase 3A / 4B / 5A / 5B 에서 사용)
+pyfixest==0.60.0
+
+# 테스트
+pytest==7.4.4
+
+# ── 참고 ──────────────────────────────────────────────────────────────
+# * Windows 전용 의존성은 없다. macOS/Linux 에서도 동작한다.
+#   단 Windows 콘솔의 cp949 인코딩 때문에 각 스크립트가
+#   sys.stdout.reconfigure(encoding="utf-8") 를 호출한다 (타 OS 에서는 무해).
+# * 46.7M 행 패널을 다루므로 RAM 16GB 이상을 권장한다.
+#   메모리가 적으면 config 의 duckdb_memory_limit 을 낮출 것.

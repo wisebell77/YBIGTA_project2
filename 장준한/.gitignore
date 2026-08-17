@@ -1,0 +1,33 @@
+# ── Python ────────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.env
+
+# ── 로컬 설정 ─────────────────────────────────────────────────────────
+config/config.yaml
+
+# ── 원본 데이터 (재배포 금지 + 용량) ──────────────────────────────────
+data/raw/*
+!data/raw/.gitkeep
+
+# ── 실행 중 생성되는 중간 데이터 ──────────────────────────────────────
+data/interim/
+data/marts/
+*.duckdb
+*.duckdb.wal
+
+# ── 실행 산출물 ───────────────────────────────────────────────────────
+outputs/checkpoints/
+outputs/tables/*
+!outputs/tables/.gitkeep
+outputs/figures/*
+!outputs/figures/.gitkeep
+outputs/tableau/*
+!outputs/tableau/.gitkeep
+
+# reference_results/ 는 커밋한다 (원 full run 의 확정 결과)
+.smoke_run/

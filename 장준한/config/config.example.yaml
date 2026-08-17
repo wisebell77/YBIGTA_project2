@@ -1,0 +1,30 @@
+# Dunnhumby Promotion Incrementality — 기본 설정
+# 아래 값은 원 분석에서 실제 사용한 값과 동일하다. 재현 시 변경하지 않는 것을 권장한다.
+# 사용하려면 이 파일을 config/config.yaml 로 복사한 뒤 수정한다 (config.yaml 은 gitignore 대상).
+
+# ── 경로 (repository root 기준 상대경로) ──────────────────────────────
+data_dir:    data/raw
+interim_dir: data/interim
+marts_dir:   data/marts
+output_dir:  outputs
+
+# ── 엔진 ──────────────────────────────────────────────────────────────
+duckdb_memory_limit: 6GB      # 16GB RAM 기준. 메모리가 적으면 4GB 로 낮출 것
+
+# ── 처치 정의 ─────────────────────────────────────────────────────────
+# PART B(실현 딥할인) 분류 기준. rate = -RETAIL_DISC / (SALES_VALUE - RETAIL_DISC)
+deep_discount_threshold: 0.30   # rate >= 0.30 → 딥할인
+full_price_threshold:    0.02   # rate <= 0.02 → 정가. 중간대는 분석에서 제외
+
+# ── 표본 범위 (causal_data 커버리지) ──────────────────────────────────
+causal_week_min: 9
+causal_week_max: 101
+excluded_commodity: "COUPON/MISC ITEMS"   # 실제 상품이 아니며 QUANTITY 를 오염시킨다
+
+# ── Phase 5B period split ─────────────────────────────────────────────
+pre_period_days: 84             # 평가기간 이전 프로필 창 (누수 방지)
+
+# ── Phase 3B-1 미래창 ─────────────────────────────────────────────────
+future_windows: [7, 14, 28, 56]
+
+random_seed: 42

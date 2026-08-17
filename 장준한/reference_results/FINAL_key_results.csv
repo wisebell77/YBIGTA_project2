@@ -1,0 +1,22 @@
+﻿no,metric,value,unit,part,source,note,on_onepage
+1,구매확률 증가,24.31,%,A (causal ITT),phase3b0_main_m1.csv,"hh×cat FE, hh cluster SE",True
+2,총수량 증가 (0구매 포함),34.41,%,A (causal ITT),phase3b0_main_m1.csv,주 스펙 M1,True
+3,강한 시간통제 수량효과,26.97,%,A (causal ITT),phase3b0_timecontrol.csv,⑧ cat×month+WEEK — 하한,True
+4,실제 매출 증가,26.12,%,A (causal ITT),phase3b0_main_m1.csv,,True
+5,정가환산 증가,39.52,%,A (causal ITT),phase3b0_main_m1.csv,,True
+6,value-to-revenue gap,13.4,%p,A (causal ITT),phase3b0_main_m1.csv,정가환산 증가율 − 실제 매출 증가율. margin loss가 아님,True
+7,총수량 증가 중 extensive-margin 근사 기여,70.6,%,A (causal ITT),01_phase3b0_report.md §4,근사 분해 — 잔차 9.8% 존재,False
+8,56일 future quantity (M3),0.000158,units/기회,A (causal ITT),phase3b1_incrementality_curve.csv,t=0.16 — significant payback 없음,True
+9,점추정 기준 cumulative ratio,101.5,% (point-estimate only),A (causal ITT),phase3b1_incrementality_curve.csv,⚠️ 헤드라인 사용 금지 — 점추정 기준 참고값,False
+10,Approx. CI-implied payback bound,17.1,%,A (causal ITT),FINAL_phase4a_robustness.csv,ΔQ0 고정 근사 환산. formal equivalence test 아님,True
+11,gross-margin scenario break-even,40.34,%,A 량 + 마진 가정,phase5c_margin_sensitivity.csv,원가·vendor funding·운영비 미반영 단순 scenario,True
+12,회수율 ΔSALES/ΔREG,59.66,%,A (causal ITT),phase3b0_main_m1.csv,,False
+13,4B 28일 whole-store spend association,-4.56,$,B (observational),phase4b_future28_results.csv,"-1.63% — 관측적, 인과 아님",True
+14,5B naive → FE 축소,93,% 축소,B (observational),phase5b_rfm_segments.csv,naive -19.24 → FE -1.35,True
+15,5B 전체 future spend (FE),-1.35,$,B (observational),phase5b_rfm_segments.csv,t=-3.32,False
+16,첫 딥할인 후 28일 재구매율,33.55,%,B (descriptive),phase5c_step3_trial_conversion.csv,,False
+17,첫 딥할인 후 56일 재구매율,49.73,%,B (descriptive),phase5c_step3_trial_conversion.csv,,True
+18,재구매 중 정가 전환율 (56일),57.15,%,B (descriptive),phase5c_step3_trial_conversion.csv,,True
+19,정가 전환율: 얕은(<20%) → 깊은(40%+) 할인,77.89 → 60.53,%,B (descriptive),phase5c_step4_discount_bands_summary.csv,밴드는 자기선택 — 인과 아님,True
+20,5A FDR 후 robust category,0,개 (83개 중),B (observational),phase5a_fdr_summary.csv,"BH q<0.05, 최소 q=0.065. p는 공표 CI에서 복원한 정규근사값",True
+21,5B FDR 후 negative High-level comparisons,6,개 비교 (17개 중),B (observational),phase5b_fdr_summary.csv,visits·spend 양쪽 모두 유지. 배타적 고객군 6개가 아니며 특성끼리 중첩됨,True
