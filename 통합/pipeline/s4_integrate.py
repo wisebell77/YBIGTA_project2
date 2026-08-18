@@ -30,22 +30,31 @@ tri.to_csv(os.path.join(OUT, "s4_triangulation.csv"), index=False, encoding="utf
 say(f"[삼각측량] 카테고리 {len(tri)}개 / 하류 매칭 {tri.quadrant.notna().sum()}개")
 
 # ── 의사결정 매트릭스 ─────────────────────────────────────────────
+# 신뢰도 규칙 (엄격): 1축 = 당일 순수취(BH 유의), 2축 = 확증 축.
+#   2축 후보 (a) 장바구니 합계(halo 포함, t_basket)  (b) 28일 하류 지출(t_spend)
+#   '상' = 1축 유의 + 2축 중 하나 이상이 |t|>=1.96 으로 같은 방향
+#   '중' = 1축 유의, 2축은 방향만 일치(비유의)
+#   '하' = 1축 비유의
+# 하류 28일 지출은 137개 중 7개만 유의할 만큼 노이즈가 크다. 부호(사분면)만으로
+# '정합'을 선언하면 노이즈를 확증으로 포장하게 되므로 반드시 유의성을 요구한다.
 def decide(r):
     v = r.verdict
-    sig_dn = (r.t_spend <= -1.96) if pd.notna(r.t_spend) else False
-    sig_up = (r.t_spend >= 1.96) if pd.notna(r.t_spend) else False
-    up = sig_up or r.quadrant == "Q1 강화"
-    dn = sig_dn or r.quadrant == "Q4 약화"
+    def sig(t, sign):
+        return pd.notna(t) and (t >= 1.96 if sign > 0 else t <= -1.96)
+    conf_up = sig(r.t_basket, +1) or sig(r.t_spend, +1)
+    conf_dn = sig(r.t_basket, -1) or sig(r.t_spend, -1)
+    dir_up = (pd.notna(r.basket_total) and r.basket_total > 0) or r.quadrant == "Q1 강화"
+    dir_dn = (pd.notna(r.basket_total) and r.basket_total < 0) or r.quadrant == "Q4 약화"
     if v == "확대":
-        if up: return "확대 — 최우선", "상"
-        if dn: return "확대하되 온보딩 설계", "중"
-        return "확대", "중"
+        if conf_up: return "확대 — 최우선", "상"
+        if conf_dn: return "확대하되 온보딩 설계", "중"
+        return ("확대", "중") if dir_up else ("확대 — 관찰 병행", "중")
     if v == "축소":
-        if dn: return "축소 — 최우선", "상"
-        if up: return "축소 보류 — 실험", "중"
-        return "할인 깊이 축소", "중"
-    if up: return "소규모 확대 실험", "하"
-    if dn: return "현행 유지·관찰", "하"
+        if conf_dn: return "축소 — 최우선", "상"
+        if conf_up: return "축소 보류 — 실험", "중"
+        return ("할인 깊이 축소", "중") if dir_dn else ("할인 깊이 축소 — 관찰 병행", "중")
+    if conf_up: return "소규모 확대 실험", "하"
+    if conf_dn: return "현행 유지·관찰", "하"
     return "보류", "하"
 
 acts = tri.apply(decide, axis=1, result_type="expand")
@@ -55,8 +64,10 @@ mat = pd.concat([tri, acts], axis=1).sort_values(["confidence", "net_now"],
 mat.to_csv(os.path.join(OUT, "s4_decision_matrix.csv"), index=False, encoding="utf-8-sig")
 hi = mat[mat.confidence == "상"]
 say(f"[매트릭스] 액션 {acts.action.value_counts().to_dict()}")
+say(f"    2축 유의성: 장바구니 {int((tri.t_basket.abs()>=1.96).sum())}/{len(tri)} · "
+    f"28일하류 {int((tri.t_spend.abs()>=1.96).sum())}/{int(tri.t_spend.notna().sum())}")
 say(f"    신뢰도 '상' {len(hi)}개: " +
-    ", ".join(f"{r.category}({r.action[:2]})" for r in hi.itertuples()))
+    ", ".join(f"{r.category}({r.action.split(' ')[0]})" for r in hi.itertuples()))
 
 # ── 고객 축 교차표 ────────────────────────────────────────────────
 dd = pd.read_csv(os.path.join(OUT, "s2_household_quintile.csv"), encoding="utf-8-sig")
