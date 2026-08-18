@@ -1,0 +1,73 @@
+﻿category,department,verdict,net_effect_usd,t_stat,basket_total_usd,t_basket,jyc_visit28_diff,jyc_spend28_diff,jyc_spend28_sig,jyc_quadrant,action,confidence,rationale
+CANDY - PACKAGED,DRUG GM,확대,1.236,5.05,4.2,2.35,0.1440912594625437,2.45235739141791,False,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+SEAFOOD - FROZEN,SEAFOOD-PCKGD,확대,1.046,2.93,-0.29,-0.1,0.1097925424012379,6.796963945876988,False,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+DELI MEATS,DELI,확대,0.947,9.07,4.038,2.81,0.1372203030097767,24.98051318811072,False,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+FROZEN PIZZA,GROCERY,확대,0.713,6.14,6.591,4.7,0.0285491656398457,0.8121126490707747,False,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+COOKIES/CONES,GROCERY,확대,0.567,4.52,4.612,1.51,0.2479759528779136,3.2126603856081024,False,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+BAKED SWEET GOODS,GROCERY,확대,0.383,4.21,7.264,3.24,0.1156091318845304,13.877602905724904,True,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+BAG SNACKS,GROCERY,확대,0.337,5.52,7.119,5.32,0.0432501467643342,6.400634619720286,False,Q1 Relationship strengthened,확대 — 최우선,상,당일 순수취 + 28일 관계 모두 양호 (2설계 정합)
+REFRGRATD DOUGH PRODUCTS,GROCERY,축소,0.174,2.69,2.102,1.22,-0.0083629128073572,-8.628742578066646,False,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+REFRGRATD JUICES/DRNKS,GROCERY,축소,-0.1,-2.56,1.928,1.67,-0.1813006293058458,-16.541039946528812,True,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+VEGETABLES - ALL OTHERS,PRODUCE,축소,-0.215,-3.72,0.28,0.16,-0.0588597479618054,-1.5755413642299747,False,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+TROPICAL FRUIT,PRODUCE,축소,-0.27,-14.04,-0.486,-0.52,-0.1775445181487599,-0.2763225580607627,False,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+BROCCOLI/CAULIFLOWER,PRODUCE,축소,-0.308,-5.53,-0.157,-0.06,-0.2856377563683066,-20.400452005361643,False,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+SALAD MIX,PRODUCE,축소,-0.312,-8.72,1.644,1.28,-0.0046896523577652,-6.0123751240022925,False,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+MUSHROOMS,PRODUCE,축소,-0.574,-8.08,-0.351,-0.14,-0.2140941975043436,-23.163188946818728,False,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+MELONS,PRODUCE,축소,-0.714,-7.14,-1.791,-0.6,-0.1658065618591935,-24.177648097516524,True,Q4 Relationship weakened,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+GRAPES,PRODUCE,축소,-1.066,-19.9,-1.664,-1.1,0.0156473311377617,-13.577000998536272,True,Q2 More low-value visits,축소 — 최우선,상,당일 손실 + 28일 관계 약화 (2설계 정합)
+BEEF,MEAT,확대,1.668,14.93,6.846,8.81,-0.0404258441747489,-5.825223165084447,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+SOFT DRINKS,GROCERY,확대,1.275,13.85,7.01,9.4,0.0416014892197328,-2.250367931697,False,Q2 More low-value visits,확대,중,당일 순수취 양호. 하류 지표는 혼합/미매칭
+SOUP,GROCERY,확대,0.909,5.08,2.079,0.86,-0.0611086427262897,1.8912649047897117,False,Q3 Fewer high-value visits,확대,중,당일 순수취 양호. 하류 지표는 혼합/미매칭
+MEAT - MISC,MEAT-PCKGD,확대,0.821,3.13,-0.225,-0.07,-0.2632246376811592,-13.307947722567295,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+FROZEN MEAT,MEAT-PCKGD,확대,0.63,2.68,3.383,1.14,-0.4932432432432433,0.9926501501501483,False,Q3 Fewer high-value visits,확대,중,당일 순수취 양호. 하류 지표는 혼합/미매칭
+FRZN MEAT/MEAT DINNERS,GROCERY,확대,0.61,4.38,0.055,0.04,-0.2494489251368409,-3.9971516841756953,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+MEAT - SHELF STABLE,GROCERY,확대,0.553,2.5,5.341,1.83,-0.2750384601624271,-2.194325358067092,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+DRY BN/VEG/POTATO/RICE,GROCERY,축소,0.526,3.14,2.291,0.6,-0.0303032819361291,11.450360296448956,False,Q3 Fewer high-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+COFFEE,GROCERY,축소,0.51,2.65,-1.127,-0.35,0.1601199526836585,4.02418684888052,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+LUNCHMEAT,MEAT-PCKGD,확대,0.403,5.3,1.252,0.96,-0.161017006664925,-4.258502879130295,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+VEGETABLES - SHELF STABLE,GROCERY,확대,0.377,3.98,10.094,4.49,-0.0080045630120405,4.679261808392128,False,Q3 Fewer high-value visits,확대,중,당일 순수취 양호. 하류 지표는 혼합/미매칭
+CANNED JUICES,GROCERY,축소,0.297,2.59,2.674,1.07,0.0402828082707339,2.0573576426630305,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+CHEESE,GROCERY,확대,0.283,5.92,4.143,4.95,-0.1997178587005425,-2.115731493694697,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+COLD CEREAL,GROCERY,확대,0.251,3.08,4.236,2.66,0.130306914186375,-4.613153133481169,False,Q2 More low-value visits,확대,중,당일 순수취 양호. 하류 지표는 혼합/미매칭
+CRACKERS/MISC BKD FD,GROCERY,확대,0.198,3.13,4.751,2.85,-0.1192749267442102,-2.0761599694010227,False,Q4 Relationship weakened,확대하되 온보딩 설계,중,당일 수익은 나지만 28일 관계 약화 — 깊이·빈도 조정 실험
+EGGS,GROCERY,축소,-0.095,-4.89,-0.715,-0.52,0.1039263581639176,4.028719952962549,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+FLUID MILK PRODUCTS,GROCERY,축소,-0.107,-3.92,1.463,2.6,0.0847006929393284,1.876164366503957,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+MILK BY-PRODUCTS,GROCERY,축소,-0.152,-4.77,5.126,3.94,0.118822886297376,5.433297561990164,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+FRZN POTATOES,GROCERY,축소,-0.186,-2.61,-4.74,-2.0,-0.3004420205262902,2.219183982683984,False,Q3 Fewer high-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+BREAKFAST SAUSAGE/SANDWICHES,MEAT-PCKGD,축소,-0.24,-2.46,1.462,0.57,0.1686221701795472,-1.1807438329430155,False,Q2 More low-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+BERRIES,PRODUCE,축소,-0.242,-4.04,0.234,0.13,0.1887674096148672,3.026055471741059,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+ICE CREAM/MILK/SHERBTS,GROCERY,축소,-0.302,-5.28,-0.123,-0.09,-0.0430900284900284,3.427450936100938,False,Q3 Fewer high-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+APPLES,PRODUCE,축소,-0.31,-6.45,2.755,1.71,-0.2340467043810249,2.993134529175466,False,Q3 Fewer high-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+CARROTS,PRODUCE,축소,-0.379,-7.88,-2.691,-0.97,-0.1850490438523225,0.4885267814880929,False,Q3 Fewer high-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+COOKIES,PASTRY,축소,-0.391,-2.19,-2.591,-0.64,0.1032786885245902,2.486976775956286,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+ONIONS,PRODUCE,축소,-0.438,-9.37,6.058,2.05,0.2794244620998674,8.812484795677532,False,Q1 Relationship strengthened,축소 보류 — 실험,중,당일 손실이나 28일 관계 양호 — 상충. 홀드아웃 실험 후보
+POTATOES,PRODUCE,축소,-0.47,-8.64,1.117,0.55,-0.098469198569559,3.5200194437619463,False,Q3 Fewer high-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+TOMATOES,PRODUCE,축소,-0.698,-15.55,-1.748,-1.22,0.004747775686162,-0.6729014829666558,False,Q2 More low-value visits,할인 깊이 축소,중,당일 손실. 하류 지표는 혼합/미매칭
+SEAFOOD-FRESH,SEAFOOD-PCKGD,불확실,0.492,1.34,6.302,2.1,-0.1223126220185044,-13.265181381037266,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+FRUIT - SHELF STABLE,GROCERY,불확실,0.229,1.42,-1.948,-0.62,-0.0742550718512257,0.1854085589319085,False,Q3 Fewer high-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+FRZN NOVELTIES/WTR ICE,GROCERY,불확실,0.197,1.16,1.363,0.42,0.3833846708846703,13.194991588966593,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+CONVENIENT BRKFST/WHLSM SNACKS,GROCERY,불확실,0.171,1.81,-2.475,-1.32,-0.0755375942207767,-4.927394335776995,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+STONE FRUIT,PRODUCE,불확실,0.165,1.56,1.229,0.59,-0.0315277777777777,0.4339124999999984,False,Q3 Fewer high-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+FRZN BREAKFAST FOODS,GROCERY,불확실,0.162,1.17,-0.005,-0.0,0.9015151515151514,26.797749999999983,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+DINNER MXS:DRY,GROCERY,불확실,0.161,1.13,-2.16,-0.65,0.0581763453810697,7.816898122583165,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+BATH TISSUES,GROCERY,불확실,0.133,0.81,5.107,1.57,-0.2721563647619983,-8.879497680723047,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+CITRUS,PRODUCE,불확실,0.104,0.84,3.159,1.11,-0.0885421314939503,1.4528061976981232,False,Q3 Fewer high-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+CHEESES,DELI,불확실,0.081,0.71,3.555,1.36,0.063702786630127,-14.577982463559316,False,Q2 More low-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+DINNER SAUSAGE,MEAT-PCKGD,불확실,0.07,0.69,1.254,0.52,-0.005937052932761,0.3844113018598011,False,Q3 Fewer high-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+FRZN VEGETABLE/VEG DSH,GROCERY,불확실,0.057,0.7,-0.079,-0.05,0.00778742436201,24.95689121283872,True,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+PORK,MEAT,불확실,0.001,0.01,2.069,1.48,0.1357067768832476,6.987364084036882,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+CANDY - CHECKLANE,DRUG GM,불확실,-0.029,-0.79,-4.092,-2.65,0.0514449565585929,1.060443184866482,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+HOT DOGS,MEAT-PCKGD,불확실,-0.038,-0.3,-0.141,-0.05,-0.0707834600321644,-5.731689441203031,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+CHICKEN/POULTRY,DELI,불확실,-0.057,-0.26,0.584,0.24,0.1033862433862433,-21.376476613756623,False,Q2 More low-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+BAKED BREAD/BUNS/ROLLS,GROCERY,불확실,-0.069,-1.98,3.274,3.44,-0.0776886866326521,-4.535672317943871,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+MARGARINES,GROCERY,불확실,-0.077,-0.98,-1.249,-0.37,0.1688499785516643,-1.3812174239732715,False,Q2 More low-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+SALD DRSNG/SNDWCH SPRD,GROCERY,불확실,-0.08,-1.07,6.627,2.59,0.2303610173893194,12.117894804933016,True,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+YOGURT,GROCERY,불확실,-0.096,-1.8,-0.617,-0.49,-0.1639453951798608,1.7089860289607637,False,Q3 Fewer high-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+PEPPERS-ALL,PRODUCE,불확실,-0.106,-1.48,3.476,1.01,0.3161556074269193,16.03315863202566,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+BREAKFAST SWEETS,PASTRY,불확실,-0.129,-1.53,3.192,1.36,-0.124821882847032,-8.214516192656923,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+CHICKEN,MEAT,불확실,-0.155,-1.49,0.034,0.03,-0.0422546705061155,2.08828022772026,False,Q3 Fewer high-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+PASTA SAUCE,GROCERY,불확실,-0.157,-1.82,-2.974,-1.01,0.2939202953908836,14.079880336983289,False,Q1 Relationship strengthened,소규모 확대 실험,하,"당일 효과 판정불가, 28일 관계 양호"
+BACON,MEAT-PCKGD,불확실,-0.18,-1.73,3.197,1.18,0.1200562518876471,-1.994120777962343,False,Q2 More low-value visits,보류,하,두 설계 모두 뚜렷한 신호 없음
+HEAT/SERVE,MEAT-PCKGD,불확실,-0.235,-1.14,-0.352,-0.14,-0.3857257018649422,-16.4631240524595,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+LAUNDRY DETERGENTS,GROCERY,불확실,-0.38,-1.62,1.876,0.66,-0.1019409883046247,-11.981534876739431,False,Q4 Relationship weakened,현행 유지·관찰,하,"당일 효과 판정불가, 28일 관계 약화"
+DIAPERS & DISPOSABLES,DRUG GM,불확실,-0.455,-1.16,1.416,0.45,,,,,보류,하,두 설계 모두 뚜렷한 신호 없음
