@@ -1,0 +1,8 @@
+[표본] 적격 카테고리 221개 — 장준한 222개
+[표본] 기회 패널 46,504,367행 — 장준한 46,714,794행  [6s]
+[ITT:legacy(검증)] n=45,065,529 | purchase +23.86% (t 45.0) | qty +33.69% (t 40.4) | net +25.73% (t 36.6) | gross +38.83% (t 44.2)
+[ITT:standard] n=24,682,107 | purchase +29.05% (t 39.2) | qty +38.51% (t 36.3) | net +31.25% (t 32.3) | gross +50.03% (t 40.0)
+    — 장준한 legacy 목표: purchase +24.31 / qty +34.41 / net +26.12 / gross +39.52
+[payback] future 창 계산 완료 [155s]
+[payback:legacy(검증)] 56일 future qty +0.042470/기회 (t 19.13) — 장준한 +0.000158 (t 0.16)
+[payback:standard] 56일 future qty +0.045037/기회 (t 18.47) — 장준한 +0.000158 (t 0.16)

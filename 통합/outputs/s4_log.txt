@@ -1,0 +1,4 @@
+[삼각측량] 카테고리 72개 / 하류 매칭 70개
+[매트릭스] 액션 {'축소 — 최우선': 12, '확대하되 온보딩 설계': 12, '현행 유지·관찰': 11, '소규모 확대 실험': 9, '보류': 8, '할인 깊이 축소': 8, '확대 — 최우선': 5, '축소 보류 — 실험': 5, '확대': 2}
+    신뢰도 '상' 17개: BEEF(확대), FRZN MEAT/MEAT DINNERS(확대), COOKIES/CONES(확대), VEGETABLES - SHELF STABLE(확대), COLD CEREAL(확대), REFRGRATD DOUGH PRODUCTS(축소), REFRGRATD JUICES/DRNKS(축소), VEGETABLES - ALL OTHERS(축소), BREAKFAST SAUSAGE/SANDWICHES(축소), TROPICAL FRUIT(축소), ICE CREAM/MILK/SHERBTS(축소), APPLES(축소), SALAD MIX(축소), COOKIES(축소), POTATOES(축소), MELONS(축소), GRAPES(축소)
+[고객 축] Spearman 0.800 / 동일 분위 56.2% / ±1 이내 91.7% (2,498가구) — 이전(개인 결과 결합) 0.838 / 58.7% / 93.8%

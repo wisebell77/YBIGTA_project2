@@ -33,7 +33,7 @@ GRAPES는 3중 확인 축소, ONIONS는 농산물 중 유일한 예외 후보.
 ## 저장소 구성
 
 ```
-├─ 통합/          브리지 테이블 3종 + 생성 스크립트 + 통합 서사
+├─ 통합/          자체 재현 파이프라인(pipeline/) + 의사결정 매트릭스 + 처치 정의 표준
 ├─ 남궁현종/      전단지·진열·쿠폰 인과 추정, 카테고리 판정, halo (SQL + 보고서 + 대시보드 3·4·5)
 ├─ 장준한/        증분성 ITT 파이프라인 (Python, phase0~8, run_pipeline.py)
 ├─ 전영찬/        딥할인 이후 고객관계·CRM 전략 (SQL + 보고서 + 대시보드 1·2)
@@ -56,8 +56,9 @@ data/
 └─ coupon.csv / coupon_redempt.csv
 ```
 
-재현 경로는 폴더별 README 참조 — 남궁현종(BigQuery 또는 로컬 DuckDB, 수치 완전 일치 검증),
-장준한(`python run_pipeline.py --all`), 통합(`python 통합/build_integration.py`).
+**전체 분석의 표준 재현은 `python 통합/pipeline/run_all.py` 하나로 끝난다** (BigQuery 불필요,
+DuckDB 로컬 실행 — 원 분석 공표치 재현 검증 포함, 상세는 [통합/pipeline/README.md](통합/pipeline/README.md)).
+개인 폴더의 원 설계 재현 경로는 각 폴더 README 참조.
 
 ## 공통 데이터 규약 (틀리기 쉬운 것)
 

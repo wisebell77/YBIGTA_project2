@@ -27,3 +27,6 @@ __pycache__/
 node_modules/
 .DS_Store
 Thumbs.db
+
+# 통합 파이프라인 실행 중간 로그 (검증 로그는 outputs/*_log.txt 로 커밋됨)
+통합/pipeline/*_run.txt

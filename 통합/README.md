@@ -17,7 +17,21 @@
 
 ---
 
-## 산출물 (전부 `build_integration.py` 로 재생성)
+## 자체 재현 파이프라인 — [`pipeline/`](pipeline/)
+
+**이 폴더 하나로 전체 분석이 재현된다.** `data/` 원본 CSV만 있으면 BigQuery 없이
+표준 처치 정의([처치정의_표준.md](처치정의_표준.md))로 세 사람의 분석을 전부 다시 계산한다.
+
+```bash
+python 통합/pipeline/run_all.py
+```
+
+각 스테이지는 legacy 모드로 원 분석 공표치를 먼저 재현해 구현의 정확성을 증명한 뒤
+(72개 판정 불일치 0건, 딥할인 당일 효과 소수점 3자리 일치, ITT ±2% 이내 등 —
+상세는 [pipeline/README.md](pipeline/README.md)), 표준 정의 결과를 `outputs/` 에 산출한다.
+개인 폴더는 각자의 원 설계 아카이브로 보존된다.
+
+## 개인 결과 결합판 (대조용 — `build_integration.py`)
 
 ### 01_category_triangulation.csv — 카테고리 삼각측량
 
