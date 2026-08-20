@@ -1,0 +1,5 @@
+﻿role_label,n_categories,penetration,occasions_per_buyer,mean_gap,coshop_rate,basket_value_share,top13_week_share
+R1 집객형,8,0.8752,13.71,34.74,0.9852,0.1343,0.1793
+R2 일상구매형,6,0.7785,10.25,37.64,0.9923,0.0979,0.1768
+R3 계절형,7,0.605,5.67,57.83,0.9932,0.0941,0.2529
+R4 편의보완형,23,0.6585,6.17,56.69,0.9937,0.0856,0.1907

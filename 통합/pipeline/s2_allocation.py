@@ -108,6 +108,7 @@ WITH e AS (SELECT household_key,category,AVG(net) n FROM s WHERE exposed=1 GROUP
 u AS (SELECT household_key,category,AVG(net) n FROM s WHERE exposed=0 GROUP BY 1,2),
 d AS (SELECT e.household_key, e.n-u.n dn, u.n un FROM e JOIN u USING (household_key,category))
 SELECT q.quintile, COUNT(*) n_pairs,
+  AVG(dn) AS net_usd, AVG(un) AS ctrl_usd,
   AVG(dn)/AVG(un)*100 AS net_pct,
   AVG(dn)/(STDDEV(dn)/SQRT(COUNT(*))) AS t_net
 FROM d JOIN hh_q q USING (household_key)
@@ -118,6 +119,11 @@ con.execute("SELECT household_key, dd, quintile FROM hh_q").df().to_csv(
     os.path.join(OUT, "s2_household_quintile.csv"), index=False, encoding="utf-8-sig")
 say("    분위별 순수취액 효과: " +
     " / ".join(f"Q{int(r.quintile)} {r.net_pct:+.1f}%(t={r.t_net:.1f})" for r in het.itertuples()))
+say("    분위별 순수취액 효과($, 구매기회당): " +
+    " / ".join(f"Q{int(r.quintile)} {r.net_usd:+.3f}(기준선 {r.ctrl_usd:.2f})" for r in het.itertuples()))
+say(f"    Q5-Q1 격차 ${het.net_usd.iloc[4]-het.net_usd.iloc[0]:.3f} "
+    f"(|Q5/Q1| 배율 {abs(het.net_usd.iloc[4]/het.net_usd.iloc[0]):.1f}배) — "
+    f"마진(원가 차감) 아님, product.csv에 원가 필드 없어 순수취액으로 대체")
 
 # ── C. halo ───────────────────────────────────────────────────────
 halo = con.execute("""

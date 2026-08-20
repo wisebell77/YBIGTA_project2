@@ -1,0 +1,6 @@
+﻿segment,households,pct,exposed_share,visit_28d_diff,store_spend_28d_diff,other_category_spend_diff,same_category_56d_qty_diff,purchase_gap_diff,top_income,top_age,top_hh_comp,priority_rank
+S1 재고비축형,700,34.0,0.2155,-0.2067,-8.707,2.109,-0.682,20.491,50-74K,45-54,2 Adults No Kids,2
+S2 관계강화형,515,25.0,0.2067,0.6575,26.512,0.882,0.562,-14.542,35-49K,45-54,2 Adults No Kids,1
+S3 장바구니재편형,249,12.1,0.2079,-0.3431,-17.2,13.319,0.024,-7.778,35-49K,45-54,2 Adults No Kids,4
+S4 전단지의존형,54,2.6,0.3356,-0.0829,-5.621,-2.84,0.165,-9.543,50-74K,35-44,2 Adults No Kids,5
+S5 반응불분명형,543,26.3,0.2047,-0.1984,-6.688,-1.786,0.184,-7.359,50-74K,45-54,2 Adults No Kids,3

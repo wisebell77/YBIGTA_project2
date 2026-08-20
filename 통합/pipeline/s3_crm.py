@@ -1,13 +1,13 @@
 """s3 — 하류(CRM) 단계 (전영찬 설계 표준 재현)
 
-주 처치 = 실현 딥할인 (구매기회 할인율 >= 30%) vs 정가 (<= 2%). 관측적/진단적 —
+주 처치 = 실현 고할인 (구매기회 할인율 >= 30%) vs 정가 (<= 2%). 관측적/진단적 —
 가구 자기선택이 포함되므로 인과로 읽지 않는다 (PART B).
 
   A. 당일 효과: 수량·실지출·정가환산 (legacy 공식 검증 후 표준 공식으로 재추정)
   B. 재구매 간격 / 사후 28·56일 잠식
-  C. 체험 전환: 첫 구매가 딥할인일 때 56일 재구매율·정가 재구매율
-  D. 28일 하류: 딥할인 vs 정가 구매 후 매장 전체 방문·지출 (카테고리별 → s4 삼각측량 입력)
-  E. 가구 할인친화도 (딥할인 구매기회 비중) → s4 고객 축 교차표 입력
+  C. 체험 전환: 첫 구매가 고할인일 때 56일 재구매율·정가 재구매율
+  D. 28일 하류: 고할인 vs 정가 구매 후 매장 전체 방문·지출 (카테고리별 → s4 삼각측량 입력)
+  E. 가구 할인친화도 (고할인 구매기회 비중) → s4 고객 축 교차표 입력
 
 legacy 공식(전영찬): rate = -RETAIL_DISC / (SALES_VALUE - RETAIL_DISC)
 표준 공식        : rate = retailer_disc / gross  (COUPON_MATCH_DISC 포함)
@@ -107,7 +107,7 @@ for k in ["d28", "d56"]:
     mu, t = cluster_t(d)
     say(f"[B] 사후 {k[1:]}일 수량 {mu:+.4f} (t {t:.2f}) — 전영찬: 28일 -0.008(t -0.81) / 56일 -0.031(t -2.01)")
 
-# ── C. 체험 전환 (첫 구매 딥할인 여부 × 56일 재구매) ──────────────
+# ── C. 체험 전환 (첫 구매 고할인 여부 × 56일 재구매) ──────────────
 trial = con.execute(f"""
 WITH first AS (
   SELECT household_key, category, MIN(day) d0 FROM occ3 GROUP BY 1,2),
@@ -128,7 +128,7 @@ FROM rep GROUP BY 1 ORDER BY 1 DESC
 """).df()
 trial.to_csv(os.path.join(OUT, "s3_trial_conversion.csv"), index=False, encoding="utf-8-sig")
 for r in trial.itertuples():
-    say(f"[C] 첫구매 {'딥할인' if r.deep_first else '비딥할인'}: n={r.n:,} / 56일 재구매 "
+    say(f"[C] 첫구매 {'고할인' if r.deep_first else '비고할인'}: n={r.n:,} / 56일 재구매 "
         f"{r.any_rep_pct:.2f}% / 정가 재구매 {r.reg_rep_pct:.2f}% — 전영찬: 38.07/33.42, 15.24/20.75")
 
 # ── D. 28일 하류: 매장 전체 방문·지출 (카테고리별) ────────────────
